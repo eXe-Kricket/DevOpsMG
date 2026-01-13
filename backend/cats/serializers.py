@@ -38,6 +38,16 @@ class Base64ImageField(serializers.ImageField):
             data = ContentFile(base64.b64decode(imgstr), name='temp.' + ext)
 
         return super().to_internal_value(data)
+    
+    # пришлось вносить правки в код, т.к. нормально на 9003 порту не работает
+    # картинки не отображались потому, что приложение отдает url без порта
+    # в текущем виде src к картинке будет с учетом порта
+    def to_representation(self, value):
+        if not value:
+            return None
+        if hasattr(value, 'url'):
+            return value.url
+        return super().to_representation(value)
 
 
 class CatSerializer(serializers.ModelSerializer):
