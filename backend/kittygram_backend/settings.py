@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from django.core.management.utils import get_random_secret_key
+from django.core.management.utils import get_random_secret_key # type: ignore
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,7 +64,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'HOST': os.getenv('POSTGRES_HOST', 'postgres'),
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
 
     }
