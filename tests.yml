@@ -1,3 +1,4 @@
 repo_owner: eXe-Kricket
-kittygram_domain: http://89.169.179.0:9003  # поправил на корректный айпи адрес
+# поправил на корректный айпи адрес
+kittygram_domain: http://89.169.179.0:9003
 dockerhub_username: exekricket
