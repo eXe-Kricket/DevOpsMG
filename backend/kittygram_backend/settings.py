@@ -12,7 +12,7 @@ DEBUG = os.getenv('DEBUG', 'false').strip().lower() == 'true'
 ALLOWED_HOSTS = os.getenv(
     'ALLOWED_HOSTS',
     '*'
-).split(',')
+).split(',')  # поправил через сплит, чтобы можно было переезжать между хостами через запятую
 
 INSTALLED_APPS = [
     'django.contrib.admin',
